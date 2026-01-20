@@ -29,7 +29,7 @@ const ConfirmationModal = ({ isOpen, onClose, onConfirm, title, message, confirm
                             <div className={`p-3 rounded-2xl ${type === 'danger' ? 'bg-red-500/10 text-red-400' : 'bg-indigo-500/10 text-indigo-400'}`}>
                                 <AlertTriangle size={24} />
                             </div>
-                            <button onClick={onClose} className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-white transition-colors">
+                            <button onClick={onClose} className="p-2 hover:bg-white/5 rounded-xl text-slate-500 hover:text-white transition-colors cursor-pointer">
                                 <X size={20} />
                             </button>
                         </div>
@@ -44,7 +44,7 @@ const ConfirmationModal = ({ isOpen, onClose, onConfirm, title, message, confirm
                         <div className="flex gap-3">
                             <button
                                 onClick={onClose}
-                                className="flex-1 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium transition-all"
+                                className="flex-1 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium transition-all cursor-pointer"
                             >
                                 {cancelText}
                             </button>
@@ -53,9 +53,9 @@ const ConfirmationModal = ({ isOpen, onClose, onConfirm, title, message, confirm
                                     onConfirm();
                                     onClose();
                                 }}
-                                className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all shadow-lg ${type === 'danger'
-                                        ? 'bg-red-500 hover:bg-red-600 text-white shadow-red-500/20'
-                                        : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-500/20'
+                                className={`flex-1 py-3 px-4 rounded-xl font-medium transition-all shadow-lg cursor-pointer ${type === 'danger'
+                                    ? 'bg-red-500 hover:bg-red-600 text-white shadow-red-500/20'
+                                    : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-500/20'
                                     }`}
                             >
                                 {confirmText}

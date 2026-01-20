@@ -106,7 +106,7 @@ const Signup = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl shadow-lg shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group disabled:opacity-50"
+                        className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl shadow-lg shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group disabled:opacity-50 cursor-pointer"
                     >
                         {loading ? (
                             <Loader2 className="w-5 h-5 animate-spin" />
@@ -122,7 +122,7 @@ const Signup = () => {
                 <div className="text-center">
                     <p className="text-sm text-slate-400">
                         Already have an account?{' '}
-                        <Link to="/login" className="text-indigo-400 hover:text-indigo-300 font-medium">
+                        <Link to="/login" className="text-indigo-400 hover:text-indigo-300 font-medium cursor-pointer">
                             Sign in
                         </Link>
                     </p>

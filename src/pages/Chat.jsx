@@ -164,10 +164,10 @@ const Chat = () => {
                                                 rows={4}
                                             />
                                             <div className="flex justify-end gap-3">
-                                                <button onClick={() => setEditingIndex(null)} className="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-red-400 transition-colors">
+                                                <button onClick={() => setEditingIndex(null)} className="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-red-400 transition-colors cursor-pointer">
                                                     <X size={18} />
                                                 </button>
-                                                <button onClick={() => saveEdit(i)} className="p-2 bg-indigo-500 hover:bg-indigo-400 rounded-lg text-white transition-colors">
+                                                <button onClick={() => saveEdit(i)} className="p-2 bg-indigo-500 hover:bg-indigo-400 rounded-lg text-white transition-colors cursor-pointer">
                                                     <Check size={18} />
                                                 </button>
                                             </div>
@@ -182,7 +182,7 @@ const Chat = () => {
                                                             <motion.img
                                                                 initial={{ opacity: 0, scale: 0.95 }}
                                                                 animate={{ opacity: 1, scale: 1 }}
-                                                                className="rounded-2xl border border-white/10 shadow-2xl my-4 max-w-full hover:scale-[1.02] transition-transform cursor-zoom-in"
+                                                                className="rounded-2xl border border-white/10 shadow-2xl my-4 max-w-full hover:scale-[1.02] transition-transform cursor-pointer"
                                                                 {...props}
                                                             />
                                                         );
@@ -194,7 +194,7 @@ const Chat = () => {
                                                             <div className="relative group/code my-4">
                                                                 <button
                                                                     onClick={() => copyToClipboard(codeString)}
-                                                                    className="absolute right-3 top-3 z-10 p-2 bg-indigo-500/20 hover:bg-indigo-500/40 text-indigo-300 rounded-lg opacity-0 group-hover/code:opacity-100 transition-all border border-indigo-500/20"
+                                                                    className="absolute right-3 top-3 z-10 p-2 bg-indigo-500/20 hover:bg-indigo-500/40 text-indigo-300 rounded-lg opacity-0 group-hover/code:opacity-100 transition-all border border-indigo-500/20 cursor-pointer"
                                                                     title="Copy Code"
                                                                 >
                                                                     <Copy size={16} />
@@ -226,7 +226,7 @@ const Chat = () => {
                                 {msg.role === 'user' && editingIndex !== i && (
                                     <button
                                         onClick={() => startEditing(i, msg.content)}
-                                        className="absolute -left-10 md:-left-12 top-2 p-2 opacity-0 group-hover:opacity-100 transition-opacity text-slate-500 hover:text-white"
+                                        className="absolute -left-10 md:-left-12 top-2 p-2 opacity-0 group-hover:opacity-100 transition-opacity text-slate-500 hover:text-white cursor-pointer"
                                     >
                                         <Edit2 size={16} />
                                     </button>
@@ -272,7 +272,7 @@ const Chat = () => {
                             type="submit"
                             disabled={!input.trim() || loading}
                             className={`p-2 md:p-3 ${input.trim() ? 'bg-indigo-600 hover:bg-indigo-500' : 'bg-slate-800 text-slate-600'
-                                } text-white rounded-lg md:rounded-[1.5rem] transition-all shadow-xl disabled:opacity-50`}
+                                } text-white rounded-lg md:rounded-[1.5rem] transition-all shadow-xl disabled:opacity-50 cursor-pointer`}
                         >
                             {loading ? <Loader2 size={20} className="animate-spin" /> : <Send size={20} />}
                         </button>

@@ -93,7 +93,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                         )}
                     </div>
                     {isOpen && (
-                        <button onClick={toggle} className="p-2 hover:bg-white/5 rounded-lg transition-colors text-slate-400 ml-2">
+                        <button onClick={toggle} className="p-2 hover:bg-white/5 rounded-lg transition-colors text-slate-400 ml-2 cursor-pointer">
                             <ChevronLeft size={20} />
                         </button>
                     )}
@@ -103,7 +103,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                 <div className={`flex-1 ${isOpen ? 'px-3' : 'px-2'} py-6 space-y-6 overflow-y-auto custom-scrollbar w-full`}>
                     <button
                         onClick={handleNewChat}
-                        className={`w-full flex items-center ${isOpen ? 'gap-3 px-3' : 'justify-center'} bg-indigo-600 hover:bg-indigo-500 text-white p-3 rounded-xl transition-all shadow-lg shadow-indigo-500/10 active:scale-95`}
+                        className={`w-full flex items-center ${isOpen ? 'gap-3 px-3' : 'justify-center'} bg-indigo-600 hover:bg-indigo-500 text-white p-3 rounded-xl transition-all shadow-lg shadow-indigo-500/10 active:scale-95 cursor-pointer`}
                         title={!isOpen ? "New Chat" : ""}
                     >
                         <Plus size={20} className={!isOpen ? 'scale-110' : ''} />
@@ -121,7 +121,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                             <button
                                 key={chat.id}
                                 onClick={() => onChatClick(chat.id)}
-                                className={`w-full flex items-center ${isOpen ? 'gap-3 px-3 text-left' : 'justify-center'} p-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group`}
+                                className={`w-full flex items-center ${isOpen ? 'gap-3 px-3 text-left' : 'justify-center'} p-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group cursor-pointer`}
                                 title={!isOpen ? chat.title : ""}
                             >
                                 <MessageSquare size={18} className="shrink-0" />
@@ -136,7 +136,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                     {isOpen && (
                         <button
                             onClick={() => setClearModalOpen(true)}
-                            className="w-full flex items-center gap-3 p-3 text-slate-500 hover:text-red-400 hover:bg-red-400/5 rounded-xl transition-all"
+                            className="w-full flex items-center gap-3 p-3 text-slate-500 hover:text-red-400 hover:bg-red-400/5 rounded-xl transition-all cursor-pointer"
                         >
                             <Trash2 size={18} />
                             <span className="text-sm">Clear History</span>
@@ -155,7 +155,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                                 </div>
                                 <button
                                     onClick={() => setLogoutModalOpen(true)}
-                                    className="p-2 hover:bg-white/10 rounded-lg text-slate-500 hover:text-white transition-colors"
+                                    className="p-2 hover:bg-white/10 rounded-lg text-slate-500 hover:text-white transition-colors cursor-pointer"
                                 >
                                     <LogOut size={18} />
                                 </button>
