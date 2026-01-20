@@ -83,6 +83,9 @@ const Chat = () => {
         setLoading(true);
 
         try {
+            if (!token) {
+                throw new Error('You are not logged in. Please login to send messages.');
+            }
             const res = await fetch('http://localhost:5000/api/gemini', {
                 method: 'POST',
                 headers: {
@@ -91,13 +94,17 @@ const Chat = () => {
                 },
                 body: JSON.stringify({ prompt: input }),
             });
-            const data = await res.json();
-            const aiMessage = { role: 'assistant', content: data.message };
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) {
+                const errMsg = data?.error || `Request failed (${res.status})`;
+                throw new Error(errMsg);
+            }
+            const aiMessage = { role: 'assistant', content: data?.message ?? 'No response' };
             const finalMessages = [...newMessages, aiMessage];
             setMessages(finalMessages);
             saveChatSession(finalMessages);
         } catch (err) {
-            setMessages(prev => [...prev, { role: 'assistant', content: 'Error: Failed to get response.' }]);
+            setMessages(prev => [...prev, { role: 'assistant', content: `Error: ${err?.message || 'Failed to get response.'}` }]);
         } finally {
             setLoading(false);
         }
